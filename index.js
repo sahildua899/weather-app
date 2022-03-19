@@ -1,6 +1,7 @@
 
 const http = require("http");
 const fs = require("fs");
+const port = process.env.PORT || 8000
 var requests = require("requests");
 
 
@@ -43,4 +44,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8000, "127.0.0.1");
+server.listen(8000, ()=>{
+  console.log(`listening to port no ${port}`)
+});
